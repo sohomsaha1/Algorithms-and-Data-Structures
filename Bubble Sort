@@ -1,0 +1,30 @@
+def bubble(list1):
+    '''
+    bubble() sorts a list of integers using the bubble sort algorithm
+    -- param:
+        list1: list of integers (unsorted)
+    -- return:
+        list1: list of sorted integers
+    '''
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(1,len(list1)-1):
+            if list1[i-1] > list1[i]:
+                swap(list1,i-1,i)
+                swapped = True
+    return list1
+    
+   
+   def swap(list1, pos1, pos2): 
+    '''
+    swap() swaps two given indexes in a list
+    -- param:
+        list1: list of values
+        pos1: first index to be swapped
+        pos2: second index to be swapped with first
+    -- return:
+        list1: list of values 
+    '''
+    list1[pos1], list1[pos2] = list1[pos2], list1[pos1] 
+    return list1
