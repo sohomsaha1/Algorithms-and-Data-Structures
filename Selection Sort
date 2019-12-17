@@ -1,0 +1,13 @@
+def selection(list1):
+    '''
+    selection() sorts a list of integers using the selection sort algorithm
+    -- param:
+        list1: list of integers (unsorted)
+    -- return:
+        array: list of sorted integers
+    '''
+    array = []
+    for i in range(len(list1)):
+        array.append(min(list1))
+        list1.remove(min(list1))
+    return array
