@@ -1,0 +1,17 @@
+def insertion(list1):
+    '''
+    insertion() sorts a list of integers using the insertion sort algorithm
+    -- param:
+        list1: list of integers (unsorted)
+    -- return:
+        list1: list of sorted integers
+    '''
+    i = 1
+    while i < len(list1):
+        j = i
+        while j>0 and list1[j-1] > list1[j]:
+            swap(list1,j,j-1)
+            j-=1
+        i+=1
+    
+    return list1
