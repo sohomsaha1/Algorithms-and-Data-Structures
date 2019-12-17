@@ -1,0 +1,23 @@
+def b(array,t,l,r):
+    '''
+    b(): Given a target(integer) and a sorted list the function will find the targets index and return it using binary search algorithm
+    -- param:
+        array: list of sorted integers
+        t: target that the function looks for
+        l: the left most index in the array (always 0)
+        r: the right most index in the given array (len(array)-1)
+    -- return:
+        m: index at which the target is found, if not found will return -1
+    '''
+    if r >= 1:#base case
+        if t > array[-1]:
+            return -1
+        m = int(l+(r-l)/2) #finding midpoint based on l and r. No need for tracker
+        if array[m] == t:
+            return m
+        elif array[m] < t:
+            return b(array,t,m+1,r) #m = left
+        elif array[m] > t:
+            return b(array,t,l,m-1) #m = right
+    else:            
+        return -1
